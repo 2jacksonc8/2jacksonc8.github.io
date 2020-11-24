@@ -2990,9 +2990,25 @@
 
 					<div class="mbr-section-btn align-center mbr-pt-4">
 						<!-- Simplifi Tag for App Store -->
-						<script async src='https://tag.simpli.fi/sifitag/5a818bb0-0c1c-0139-81a1-06b4c2516bae'></script>
-						<a class="btn btn-white display-7"
-							href="https://apps.apple.com/us/app/tankr-gas-delivery/id1509729536"><span
+						<script>
+							function AppStore() {
+								fireConversionPixel();
+								openpage();
+							}
+
+							function fireConversionPixel() {
+								var s = document.createElement("script");
+								s.type = "text/javascript";
+								s.src = "https://tag.simpli.fi/sifitag/5a818bb0-0c1c-0139-81a1-06b4c2516bae";
+								document.getElementsByTagName('head')[0].appendChild(s);
+							}
+
+							function openpage() {
+								window.open("https://apps.apple.com/us/app/tankr-gas-delivery/id1509729536", "mywindow");
+							}
+						</script>
+						<!-- End Simplifi for App Store -->
+						<a class="btn btn-white display-7" onclick="AppStore()"><span
 								class="mbrib-apple mbr-iconfont mbr-iconfont-btn"><svg version="1.1"
 									xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32"
 									fill="currentColor">
@@ -3001,9 +3017,25 @@
 									</path>
 								</svg></span>App Store&nbsp;</a>
 						<!-- Simplifi Tag for Google Play -->
-						<script async src='https://tag.simpli.fi/sifitag/5d822ae0-0c1c-0139-388e-06abc14c0bc6'></script>
-						<a class="btn btn-white display-7"
-							href="https://play.google.com/store/apps/details?id=com.tankrapp"><span
+						<script>
+							function GooglePlay() {
+								fireConversionPixel();
+								openpage();
+							}
+
+							function fireConversionPixel() {
+								var s = document.createElement("script");
+								s.type = "text/javascript";
+								s.src = "https://tag.simpli.fi/sifitag/5d822ae0-0c1c-0139-388e-06abc14c0bc6";
+								document.getElementsByTagName('head')[0].appendChild(s);
+							}
+
+							function openpage() {
+								window.open("https://play.google.com/store/apps/details?id=com.tankrapp", "mywindow");
+							}
+						</script>
+						<!-- End Simplifi for Google Play -->
+						<a class="btn btn-white display-7" onclick="GooglePlay()"><span
 								class="mbrib-android mbr-iconfont mbr-iconfont-btn"><svg version="1.1"
 									xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32"
 									fill="currentColor">
