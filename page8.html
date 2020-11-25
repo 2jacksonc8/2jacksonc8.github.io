@@ -2854,6 +2854,8 @@
 	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 
 
+	<script async src='https://tag.simpli.fi/sifitag/47855f90-0c1c-0139-388e-06abc14c0bc6'></script>
+
 </head>
 
 <body>
@@ -2992,11 +2994,11 @@
 						<!-- Simplifi Tag for App Store -->
 						<script>
 							function AppStore() {
-								fireConversionPixel();
+								fireConversionPixel_Appstore();
 								openpage();
 							}
 
-							function fireConversionPixel() {
+							function fireConversionPixel_Appstore() {
 								var s = document.createElement("script");
 								s.type = "text/javascript";
 								s.src = "https://tag.simpli.fi/sifitag/5a818bb0-0c1c-0139-81a1-06b4c2516bae";
@@ -3019,11 +3021,10 @@
 						<!-- Simplifi Tag for Google Play -->
 						<script>
 							function GooglePlay() {
-								fireConversionPixel();
+								fireConversionPixel_Googleplay();
 								openpage();
 							}
-
-							function fireConversionPixel() {
+							function fireConversionPixel_Googleplay() {
 								var s = document.createElement("script");
 								s.type = "text/javascript";
 								s.src = "https://tag.simpli.fi/sifitag/5d822ae0-0c1c-0139-388e-06abc14c0bc6";
