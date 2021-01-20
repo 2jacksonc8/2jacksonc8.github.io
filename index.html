@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html amp>
+<html style="animation-delay: 0s" class="overflow-hidden"
+    [class]="lightboxOnLoad.visible ? 'overflow-visible' : 'overflow-hidden'" amp>
 
 <head>
     <!-- Site made with Mobirise Website Builder v5.2.0, https://mobirise.com -->
@@ -14,7 +15,7 @@
 
     <title>Home</title>
 
-    <link rel="canonical" href="home.html">
+    <link rel="canonical" href="index.html">
     <style amp-boilerplate>
         body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -88,6 +89,28 @@
         rel="stylesheet">
 
     <style amp-custom>
+        .floating-wpp-button-image {
+            width: 65px;
+            height: 65px;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8' standalone='no'?%3e%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='isolation:isolate' viewBox='0 0 800 800' width='65px' height='65px'%3e%3cdefs%3e%3cclipPath id='_clipPath_A3g8G5hPEGG2L0B6hFCxamU4cc8rfqzQ'%3e%3crect width='800' height='800'/%3e%3c/clipPath%3e%3c/defs%3e%3cg clip-path='url(%23_clipPath_A3g8G5hPEGG2L0B6hFCxamU4cc8rfqzQ)'%3e%3cg%3e%3cpath d=' M 787.59 800 L 12.41 800 C 5.556 800 0 793.332 0 785.108 L 0 14.892 C 0 6.667 5.556 0 12.41 0 L 787.59 0 C 794.444 0 800 6.667 800 14.892 L 800 785.108 C 800 793.332 794.444 800 787.59 800 Z ' fill='rgb(37,211,102)'/%3e%3c/g%3e%3cg%3e%3cpath d=' M 508.558 450.429 C 502.67 447.483 473.723 433.24 468.325 431.273 C 462.929 429.308 459.003 428.328 455.078 434.22 C 451.153 440.114 439.869 453.377 436.434 457.307 C 433 461.236 429.565 461.729 423.677 458.78 C 417.79 455.834 398.818 449.617 376.328 429.556 C 358.825 413.943 347.008 394.663 343.574 388.768 C 340.139 382.873 343.207 379.687 346.155 376.752 C 348.804 374.113 352.044 369.874 354.987 366.436 C 357.931 362.999 358.912 360.541 360.875 356.614 C 362.837 352.683 361.857 349.246 360.383 346.299 C 358.912 343.352 347.136 314.369 342.231 302.579 C 337.451 291.099 332.597 292.654 328.983 292.472 C 325.552 292.301 321.622 292.265 317.698 292.265 C 313.773 292.265 307.394 293.739 301.996 299.632 C 296.6 305.527 281.389 319.772 281.389 348.752 C 281.389 377.735 302.487 405.731 305.431 409.661 C 308.376 413.592 346.949 473.062 406.015 498.566 C 420.062 504.634 431.03 508.256 439.581 510.969 C 453.685 515.451 466.521 514.818 476.666 513.302 C 487.978 511.613 511.502 499.06 516.409 485.307 C 521.315 471.55 521.315 459.762 519.842 457.307 C 518.371 454.851 514.446 453.377 508.558 450.429 Z M 401.126 597.117 L 401.047 597.117 C 365.902 597.104 331.431 587.661 301.36 569.817 L 294.208 565.572 L 220.08 585.017 L 239.866 512.743 L 235.21 505.332 C 215.604 474.149 205.248 438.108 205.264 401.1 C 205.307 293.113 293.17 205.257 401.204 205.257 C 453.518 205.275 502.693 225.674 539.673 262.696 C 576.651 299.716 597.004 348.925 596.983 401.258 C 596.939 509.254 509.078 597.117 401.126 597.117 Z M 567.816 234.565 C 523.327 190.024 464.161 165.484 401.124 165.458 C 271.24 165.458 165.529 271.161 165.477 401.085 C 165.46 442.617 176.311 483.154 196.932 518.892 L 163.502 641 L 288.421 608.232 C 322.839 627.005 361.591 636.901 401.03 636.913 L 401.126 636.913 L 401.127 636.913 C 530.998 636.913 636.717 531.2 636.77 401.274 C 636.794 338.309 612.306 279.105 567.816 234.565' fill-rule='evenodd' fill='rgb(255,255,255)'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
+        }
+
+        #chatbutton-wa {
+            position: fixed;
+        }
+
+        .floating-wpp-button-image amp-img,
+        .floating-wpp-button-image amp-img img {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            border-radius: 50%;
+        }
+
         div,
         span,
         h1,
@@ -1992,12 +2015,27 @@
             z-index: 2;
         }
 
+        html.overflow-hidden:not(.is-builder) {
+            animation: disableScroll;
+            animation-fill-mode: forwards;
+        }
+
+        html.overflow-visible {
+            animation: none;
+        }
+
+        @keyframes disableScroll {
+            100% {
+                overflow-y: hidden;
+            }
+        }
+
         body {
             font-family: Work Sans;
         }
 
         blockquote {
-            border-color: #04b2ff;
+            border-color: #ff8a04;
         }
 
         div[submit-success]>* {
@@ -2082,7 +2120,7 @@
         }
 
         .bg-primary {
-            background-color: #04b2ff;
+            background-color: #ff8a04;
         }
 
         .bg-success {
@@ -2257,14 +2295,14 @@
         }
 
         .btn-primary {
-            box-shadow: 3px 3px 27px -3px #04b2ff;
+            box-shadow: 3px 3px 27px -3px #ff8a04;
         }
 
         .btn-primary,
         .btn-primary:active,
         .btn-primary.active {
-            background-color: #04b2ff;
-            border-color: #04b2ff;
+            background-color: #ff8a04;
+            border-color: #ff8a04;
             color: #ffffff;
         }
 
@@ -2345,24 +2383,24 @@
         .btn-primary-outline:active,
         .btn-primary-outline.active {
             background: none;
-            border-color: #04b2ff;
-            color: #04b2ff;
+            border-color: #ff8a04;
+            color: #ff8a04;
         }
 
         .btn-primary-outline:hover,
         .btn-primary-outline:focus,
         .btn-primary-outline.focus {
             color: #ffffff;
-            background-color: #04b2ff;
-            border-color: #04b2ff;
-            box-shadow: 3px 3px 27px -3px #04b2ff;
+            background-color: #ff8a04;
+            border-color: #ff8a04;
+            box-shadow: 3px 3px 27px -3px #ff8a04;
         }
 
         .btn-primary-outline.disabled,
         .btn-primary-outline:disabled {
             color: #ffffff;
-            background-color: #04b2ff;
-            border-color: #04b2ff;
+            background-color: #ff8a04;
+            border-color: #ff8a04;
         }
 
         .btn-secondary-outline,
@@ -2534,7 +2572,7 @@
         }
 
         .text-primary {
-            color: #04b2ff;
+            color: #ff8a04;
         }
 
         .text-secondary {
@@ -2571,12 +2609,12 @@
         }
 
         .amp-iconfont {
-            color: #04b2ff;
+            color: #ff8a04;
         }
 
         a.text-primary:hover,
         a.text-primary:focus {
-            color: #00496a;
+            color: #6a3900;
         }
 
         a.text-secondary:hover,
@@ -2632,7 +2670,7 @@
 
         .mbr-plan-header.bg-primary .mbr-plan-subtitle,
         .mbr-plan-header.bg-primary .mbr-plan-price-desc {
-            color: #d0f1ff;
+            color: #ffe9d0;
         }
 
         .mbr-plan-header.bg-success .mbr-plan-subtitle,
@@ -2656,7 +2694,7 @@
         }
 
         .mobirise-spinner em:nth-child(1) {
-            background: #04b2ff;
+            background: #ff8a04;
         }
 
         .mobirise-spinner em:nth-child(2) {
@@ -2673,6 +2711,7 @@
 
         #scrollToTopButton {
             background-color: #6278df;
+            border-radius: 50%;
         }
 
         #scrollToTopButton a:before {
@@ -2718,8 +2757,16 @@
         form input:not([type="checkbox"]):not([type="radio"]):focus,
         form textarea:focus,
         form select:focus {
-            border-color: #04b2ff;
-            box-shadow: 3px 3px 27px -3px #04b2ff;
+            border-color: #ff8a04;
+            box-shadow: 3px 3px 27px -3px #ff8a04;
+        }
+
+        .btn {
+            border-radius: 40px;
+        }
+
+        .nav-tabs .nav-link {
+            border-radius: 40px;
         }
 
         .cid-rtcr1CDiEo {
@@ -2734,8 +2781,8 @@
         }
 
         .cid-rtcr1CDiEo .btn-white:hover {
-            background: #04b2ff;
-            border: 2px solid #04b2ff;
+            background: #ff8a04;
+            border: 2px solid #ff8a04;
             color: white;
         }
 
@@ -2762,7 +2809,7 @@
         }
 
         .cid-rtnWvOIPCq .card-img .amp-iconfont {
-            color: #04b2ff;
+            color: #ff8a04;
             transition: color 0.2s;
         }
 
@@ -2788,6 +2835,30 @@
 
         .cid-rtnWvOIPCq .card-title {
             text-align: left;
+        }
+
+        .cid-smEJczSJxT {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            background-color: #ffffff;
+        }
+
+        .cid-smEJczSJxT .card-wrapper {
+            box-shadow: none;
+        }
+
+        @media (max-width: 991px) {
+            .cid-smEJczSJxT .card-wrapper {
+                flex-wrap: wrap;
+            }
+        }
+
+        .cid-smEJczSJxT .card-wrapper:hover {
+            box-shadow: none;
+        }
+
+        .cid-smEJczSJxT .card-box {
+            width: 100%;
         }
 
         .cid-slZYXds3qd {
@@ -2835,9 +2906,9 @@
 
         .cid-slZIxf085H .btn:hover {
             background-color: white;
-            color: #04b2ff;
-            border-color: #04b2ff;
-            box-shadow: 3px 3px 27px -3px #04b2ff;
+            color: #ff8a04;
+            border-color: #ff8a04;
+            box-shadow: 3px 3px 27px -3px #ff8a04;
         }
 
         @media (max-width: 992px) {
@@ -3004,7 +3075,7 @@
         }
 
         .cid-rtGbVjULS8 .close-sidebar:focus {
-            outline: 2px auto #04b2ff;
+            outline: 2px auto #ff8a04;
         }
 
         .cid-rtGbVjULS8 .close-sidebar span {
@@ -3031,7 +3102,7 @@
 
         .cid-rtGbVjULS8 .link:hover,
         .cid-rtGbVjULS8 .dropdown-item:hover {
-            color: #04b2ff;
+            color: #ff8a04;
         }
 
         .cid-rtGbVjULS8 .amp-iconfont {
@@ -3062,8 +3133,251 @@
             color: #000000;
         }
 
-        .cid-rwkd32kE8A .fLink {
-            color: #04b2ff;
+        .cid-smEKCGVjuE .mbr-row {
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .cid-smEKCGVjuE .mbr-row {
+                margin-left: -1.5rem;
+                margin-right: -1.5rem;
+            }
+        }
+
+        .cid-smEKCGVjuE p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .cid-smEKCGVjuE .card-wrapper {
+            background: #ffffff;
+            border-radius: .3rem;
+            -webkit-box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 767px) {
+            .cid-smEKCGVjuE .card-wrapper {
+                padding: 1rem;
+            }
+        }
+
+        .cid-smEKCGVjuE .form-wrapper .mbr-section-btn {
+            margin: .5rem;
+        }
+
+        .cid-smEKCGVjuE .form-wrapper .mbr-section-btn .btn {
+            margin: 0;
+        }
+
+        .cid-smEKCGVjuE .card-img amp-img {
+            width: 100%;
+            margin: auto;
+        }
+
+        .cid-smEKCGVjuE .card-title {
+            width: 100%;
+            margin: 0;
+            line-height: 1.5;
+            color: #00b2ff;
+        }
+
+        .on-load-popup.cid-smEKCGVjuE .mbr-popup,
+        amp-lightbox.cid-smEKCGVjuE .mbr-popup {
+            width: 100%;
+            min-height: 100%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+        }
+
+        .cid-smEKCGVjuE.on-load-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: transparent;
+            animation: show;
+            animation-fill-mode: forwards;
+            visibility: hidden;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .cid-smEKCGVjuE.on-load-popup .popup-close>span {
+            width: 24px;
+            height: 24px;
+        }
+
+        @keyframes show {
+            100% {
+                visibility: visible;
+            }
+        }
+
+        .cid-smEKCGVjuE .mbr-popup .popup-close {
+            position: absolute;
+            right: 1rem;
+            margin: -1rem -1rem -1rem auto;
+            padding: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: .75;
+        }
+
+        .cid-smEKCGVjuE .mbr-popup .popup-close:hover {
+            opacity: 1;
+        }
+
+        .cid-smEKCGVjuE .mbr-popup .popup-close:focus {
+            outline: none;
+        }
+
+        .cid-smEKCGVjuE .mbr-popup .popup-close>span {
+            font-size: 24px;
+            color: #000000;
+        }
+
+        .cid-smEKCGVjuE .popup-notification {
+            width: 100%;
+            margin-top: 3rem;
+            color: #fff;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .cid-smEKCGVjuE .mbr-form {
+            justify-content: center;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .cid-smEKCGVjuE .mbr-form {
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-align-items: center;
+                align-items: center;
+            }
+        }
+
+        .cid-smEKCGVjuE.popup-builder {
+            background-color: #fff;
+        }
+
+        .cid-smEKCGVjuE.popup-builder .mbr-overlay {
+            position: absolute;
+        }
+
+        .cid-smEKCGVjuE.popup-builder .amp-modal-dialog {
+            margin: 0 auto;
+            padding-top: 60px;
+            padding-bottom: 60px;
+            z-index: 2;
+        }
+
+        .cid-smEKCGVjuE .amp-modal-dialog {
+            margin: .5rem;
+            padding: 0;
+        }
+
+        .cid-smEKCGVjuE .mbr-form-row {
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-right: -0.5rem;
+            margin-left: -0.5rem;
+        }
+
+        .cid-smEKCGVjuE .mbr-form-row>[class*="mbr-col"] {
+            padding-left: .5rem;
+            padding-right: .5rem;
+        }
+
+        .cid-smEKCGVjuE .field {
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+        }
+
+        .cid-smEKCGVjuE .submit-message {
+            width: 100%;
+        }
+
+        .cid-smEKCGVjuE .mbr-form-row>div {
+            margin-bottom: 0;
+        }
+
+        .cid-smEKCGVjuE .mbr-overlay {
+            bottom: 0;
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 0;
+        }
+
+        @media (min-width: 576px) {
+            .cid-smEKCGVjuE .amp-modal-dialog {
+                max-width: 500px;
+                margin: 1.75rem auto;
+            }
+
+            .cid-smEKCGVjuE .modal-sm {
+                max-width: 300px;
+            }
+        }
+
+        @media (min-width: 992px) {
+
+            .cid-smEKCGVjuE .modal-lg,
+            .cid-smEKCGVjuE .modal-xl {
+                max-width: 800px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .cid-smEKCGVjuE .modal-xl {
+                max-width: 1140px;
+            }
+        }
+
+        .cid-smEKCGVjuE .popup-header {
+            display: flex;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+
+        .cid-smEKCGVjuE .popup-text {
+            margin-bottom: 1rem;
+        }
+
+        .cid-smEKCGVjuE .popup-body {
+            position: relative;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            padding: 1rem;
+        }
+
+        .cid-smEKCGVjuE .popup-footer {
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .cid-smEKCGVjuE .pt-0 {
+            padding-top: 0;
+        }
+
+        .cid-smEKCGVjuE .pb-0 {
+            padding-bottom: 0;
         }
 
         .engine {
@@ -3090,19 +3404,12 @@
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 
-    <script async src='https://tag.simpli.fi/sifitag/47855f90-0c1c-0139-388e-06abc14c0bc6'></script>
-    <script>
-        const handleSimplifi = (tag, link) => {
-            const simplifTag = document.createElement("script");
-            simplifTag.type = 'text/javascript';
-            simplifTag.src = `https://tag.simpli.fi/sifitag/${tag}`;
-            document.head.appendChild(simplifTag);
-
-            window.open(link);
-        }
-    </script>
 
 
+    <script async custom-element="amp-user-notification"
+        src="https://cdn.ampproject.org/v0/amp-user-notification-0.1.js"></script>
+    <script async custom-element="amp-social-share"
+        src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
 </head>
 
 <body>
@@ -3156,11 +3463,20 @@
             </div>
             <!-- SOCIAL ICON END -->
             <!-- SHOW BUTTON -->
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-md mbr-bold btn-primary-outline display-4"
-                    href="download.html">Download Our App!</a></div>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-md mbr-bold btn-success-outline display-4"
+                    href="download.html"><span class="mobi-mbri mobi-mbri-download-2 mbr-iconfont mbr-iconfont-btn"><svg
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16"
+                            height="16">
+                            <path
+                                d="M15.3 17.9l1.4 1.4L12 24l-4.7-4.7 1.4-1.4 2.3 2.3V9h2v11.2l2.3-2.3zM19.8 7c-.7-3.4-3.8-6-7.3-6-3.2 0-6 2.1-7.1 5H5c-2.8 0-5 2.2-5 5s2.2 5 5 5h4v-2H5c-1.7 0-3-1.3-3-3s1.3-3 3-3h2l.1-.6C7.6 4.8 9.9 3 12.5 3c2.9 0 5.3 2.2 5.5 5.1V9h1.5c1.4 0 2.5 1.1 2.5 2.5S20.9 14 19.5 14H15v2h4.5c2.5 0 4.5-2 4.5-4.5 0-2.4-1.8-4.3-4.2-4.5z">
+                            </path>
+                        </svg></span>Download Our App!</a></div>
             <!-- SHOW BUTTON END -->
         </div>
     </amp-sidebar>
+    <amp-state id="lightboxOnLoad">
+        <script type="application/json">{"visible": false}</script>
+    </amp-state>
 
     <!-- Analytics -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -3253,8 +3569,14 @@
                     <!-- SOCIAL ICON END -->
                     <!-- SHOW BUTTON -->
                     <div class="navbar-buttons mbr-section-btn"><a
-                            class="btn btn-md mbr-bold btn-primary-outline display-4" href="download.html">Download Our
-                            App!</a></div>
+                            class="btn btn-md mbr-bold btn-success-outline display-4" href="download.html"><span
+                                class="mobi-mbri mobi-mbri-download-2 mbr-iconfont mbr-iconfont-btn"><svg
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    width="16" height="16">
+                                    <path
+                                        d="M15.3 17.9l1.4 1.4L12 24l-4.7-4.7 1.4-1.4 2.3 2.3V9h2v11.2l2.3-2.3zM19.8 7c-.7-3.4-3.8-6-7.3-6-3.2 0-6 2.1-7.1 5H5c-2.8 0-5 2.2-5 5s2.2 5 5 5h4v-2H5c-1.7 0-3-1.3-3-3s1.3-3 3-3h2l.1-.6C7.6 4.8 9.9 3 12.5 3c2.9 0 5.3 2.2 5.5 5.1V9h1.5c1.4 0 2.5 1.1 2.5 2.5S20.9 14 19.5 14H15v2h4.5c2.5 0 4.5-2 4.5-4.5 0-2.4-1.8-4.3-4.2-4.5z">
+                                    </path>
+                                </svg></span>Download Our App!</a></div>
                     <!-- SHOW BUTTON END -->
                 </div>
                 <!-- COLLAPSED MENU END -->
@@ -3285,7 +3607,7 @@
                         Get gas delivered to your car.</h2>
 
                     <div class="mbr-section-btn align-center mbr-pt-4"><a class="btn btn-primary display-7"
-                            href="download.html">Download the Tankr App</a></div>
+                            href="download.html">Get Started Here&nbsp;</a></div>
                 </div>
             </div>
         </div>
@@ -3298,10 +3620,9 @@
         <div class="container">
             <div class="title-wrap mbr-pb-4 align-center">
                 <h3 class="mbr-section-title mbr-bold mbr-fonts-style display-1">How Tankr works:</h3>
-                <h4 class="mbr-section-subtitle mbr-fonts-style mbr-gray mbr-pt-3 mbr-light mbr-pb-5 display-5">Whether
-                    you are at home, work, school, the gym--&nbsp;<div>Tankr brings gas directly to your car.&nbsp;
-                    </div>
-                </h4>
+                <h4 class="mbr-section-subtitle mbr-fonts-style mbr-gray mbr-pt-3 mbr-light mbr-pb-5 display-5">
+                    &nbsp;Whether you are at home, work, school, the gym, etc.-- Tankr brings the gas directly to
+                    you.&nbsp;&nbsp;</h4>
             </div>
             <div class="mbr-row">
                 <div class="card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-3 md-pb">
@@ -3405,6 +3726,48 @@
         </div>
     </section>
 
+    <section class="features2 cid-smEJczSJxT" id="features2-12">
+
+
+
+        <div class="container">
+
+            <div class="mbr-row mbr-jc-c">
+                <div class="card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-6 align-center">
+                    <div class="card-wrapper mbr-flex mbr-column">
+                        <div class="card-img align-center mbr-pb-1">
+                            <div class="image-text mbr-fonts-style mbr-semibold display-1">Price Per Gallon</div>
+                        </div>
+                        <div class="card-box">
+
+                            <h4 class="card-subtitle mbr-pt-1 mbr-fonts-style mbr-gray mbr-regular display-7">Our prices
+                                change daily and are set to match the average $/gal for your area-- just like the gas
+                                station!&nbsp;</h4>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-6 align-center last-child">
+                    <div class="card-wrapper mbr-flex mbr-column">
+                        <div class="card-img align-center mbr-pb-1">
+                            <div class="image-text mbr-fonts-style mbr-semibold display-1">Delivery Fee&nbsp;</div>
+                        </div>
+                        <div class="card-box">
+
+                            <h4 class="card-subtitle mbr-pt-1 mbr-fonts-style mbr-gray mbr-regular display-7">In order
+                                to provide delivery flexibility, all orders include an $8 delivery fee.&nbsp;&nbsp;</h4>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
     <section class="header4 cid-slZYXds3qd" id="header4-10">
 
 
@@ -3479,7 +3842,7 @@
                                 <amp-state id="myStateform110">
                                     <script type="application/json"> {}</script>
                                 </amp-state><input type="hidden" name="email" data-form-email="true"
-                                    value="ERxDkpsP94ck7wFxpA+W20H6UmHJswRj2ghyFQjl1hn7h4nhk3IvK3vMru87Hj7iT6xEv2FfVlUeu5IgBS59eGI5RxCjrGziqvaQuBlANVPOIE5QOKihUK+wdZVQ5iV0">
+                                    value="Rp932GVyZgpNAaXmzraRT7iCSVcSQcngmy2fK5ffM/0b+RUzfWRoit1eEWjhMxfSZKCJklpxOZm3MDQ0BuvisjUfshst4RipvmoJV6StKKClW3t7XClm4s3GgR8/hXZA">
                                 <div class="mbr-form-row">
                                     <div submit-success="" class="mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12">
                                         <template data-form-alert="" type="amp-mustache">Subscription
@@ -3518,8 +3881,8 @@
                                 service and experience a safe, efficient, and sanitary fill-up for
                                 yourself.&nbsp;</span></h2>
 
-                        <div class="mbr-section-btn mbr-pt-5"><a class="btn btn-black display-4"
-                                onclick="handleSimplifi('5a818bb0-0c1c-0139-81a1-06b4c2516bae', 'https\:\/\/apps.apple.com/us/app/tankr-gas-delivery/id1509729536')"><span
+                        <div class="mbr-section-btn mbr-pt-5"><a class="btn btn-success display-4"
+                                href="https://apps.apple.com/us/app/tankr-gas-delivery/id1509729536"><span
                                     class="mbrib-apple mbr-iconfont mbr-iconfont-btn"><svg version="1.1"
                                         xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32"
                                         fill="currentColor">
@@ -3527,8 +3890,8 @@
                                         <path
                                             d="M21.060 0c-3.746 0-7.060 2.912-7.060 6.588 0 1.226 1.692 1.412 2.94 1.412 3.752 0 7.060-2.984 7.060-6.66 0-1.312-1.72-1.34-2.94-1.34zM21.626 2c0 2.016-2.206 4-5.252 4 0-2.020 2.072-4 5.252-4zM10.25 8c-5.74 0-8.25 4.828-8.25 10 0 8.052 4.76 14 9.25 14 3.554 0 3.548-2 5.188-2s1.76 2 5.184 2c3 0 6.586-2.752 8.314-7.85 0.128-0.4-0.032-0.88-0.38-1.124-1.7-1.080-2.56-2.924-2.56-5.026 0-1.94 0.7-3.62 2.188-4.724 0.408-0.28 0.552-0.88 0.312-1.312-1.436-2.576-3.972-3.964-6.808-3.964-3.548 0-4.034 2-6.248 2-2.22 0-2.6-2-6.19-2zM10.25 10c3 0 3.126 1.992 6.188 2 3.060 0 3.106-2 6.248-2 2.052 0 3.514 0.88 4.624 2.464-1.494 1.446-2.31 3.32-2.31 5.536 0 2.43 0.988 4.506 2.75 5.964-1.594 4.056-4.5 6.036-6.126 6.036-2.24 0-2.744-2-5.186-2-2.444 0-2.74 2-5.19 2-2.842 0-7.248-4.35-7.248-12 0-4.324 1.872-8 6.25-8z">
                                         </path>
-                                    </svg></span>&nbsp;App Store</a> <a class="btn btn-black display-4"
-                                onclick="handleSimplifi('5d822ae0-0c1c-0139-388e-06abc14c0bc6', 'https\:\/\/play.google.com/store/apps/details?id=com.tankrapp')"><span
+                                    </svg></span>&nbsp;App Store</a> <a class="btn btn-success display-4"
+                                href="https://play.google.com/store/apps/details?id=com.tankrapp"><span
                                     class="mbrib-android mbr-iconfont mbr-iconfont-btn"><svg version="1.1"
                                         xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32"
                                         fill="currentColor">
@@ -3562,33 +3925,179 @@
 
 
         <div class="footer-container container">
-            <div class="mbr-row link-items mbr-jc-c mbr-fonts-style display-7">
 
-
-
-
-
-                <p class="mbr-text fLink mbr-px-1 mbr-black"><a href="terms-of-service.html" class="text-success">Terms
-                        of
-                        Service</a></p>
-                <p class="mbr-text fLink mbr-px-1 mbr-black"><a href="faq.html" class="text-success">FAQ's</a></p>
-                <p class="mbr-text fLink mbr-px-1 mbr-black"><a href="privacy.html" class="text-success">Privacy
-                        Policy</a></p>
-                <p class="mbr-text fLink mbr-px-1 mbr-black"><a href="contact-us.html" class="text-success">Contact
-                        Us</a>
-                </p>
-            </div>
             <div class="copyright mbr-px-2 mbr-flex mbr-jc-c">
-                <p class="mbr-text mbr-fonts-style mbr-black align-center display-7">© Copyright 2019 Tankr, Inc. - All
-                    Rights Reserved</p>
+                <p class="mbr-text mbr-fonts-style mbr-black align-center display-7">For more information on the
+                    COVID-19 virus, visit www.CDC.gov</p>
             </div>
         </div>
+    </section>
+
+    <amp-lightbox id="mbr-popup-13" class="cid-smEKCGVjuE" layout="nodisplay" scrollable="">
+        <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(0, 0, 0);">
+        </div>
+        <div class="mbr-popup" data-timer-delay="0">
+            <div class="container amp-modal-dialog">
+                <div class="card-wrapper">
+                    <div class="popup-header">
+                        <h5 class="mbr-fonts-style card-title align-center display-5"><strong>PROTECT YOUR LOVED ONES
+                                FROM COVID-19</strong></h5>
+                        <div class="popup-close" on="tap:mbr-popup-13.close" role="button" tabindex="0">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 32 32" fill="currentColor">
+                                <path
+                                    d="M31.797 0.191c-0.264-0.256-0.686-0.25-0.942 0.015l-13.328 13.326c-0.598 0.581 0.342 1.543 0.942 0.942l13.328-13.326c0.27-0.262 0.27-0.695 0-0.957zM14.472 17.515c-0.264-0.256-0.686-0.25-0.942 0.015l-13.328 13.326c-0.613 0.595 0.34 1.562 0.942 0.942l13.328-13.326c0.27-0.262 0.27-0.695 0-0.957zM1.144 0.205c-0.584-0.587-1.544 0.336-0.942 0.942l30.654 30.651c0.613 0.625 1.563-0.325 0.942-0.942z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="popup-body">
+
+
+                        <div>
+                            <div class="card-img">
+                                <amp-img src="assets/images/tankr-168-936x1407.jpeg" layout="responsive"
+                                    width="467.9887428842505" height="620.453" alt="Mobirise" class="mobirise-loader">
+                                    <div placeholder="" class="placeholder">
+                                        <div class="mobirise-spinner">
+                                            <em></em>
+                                            <em></em>
+                                            <em></em>
+                                        </div>
+                                    </div>
+
+                                </amp-img>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="popup-footer align-center">
+                        <div class="mbr-section-btn"><a class="btn btn-md btn-primary display-4" href="page9.html">
+                                LEARN MORE
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </amp-lightbox>
+    <section class="cid-smEKCGVjuE on-load-popup" id="mbr-popup-13-onload" style="animation-delay: 0s;">
+
+
+
+        <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(0, 0, 0);">
+        </div>
+
+        <div class="mbr-popup" data-timer-delay="0">
+            <div class="container amp-modal-dialog">
+                <div class="card-wrapper">
+                    <div class="popup-header">
+                        <h5 class="mbr-fonts-style card-title align-center display-5"><strong>PROTECT YOUR LOVED ONES
+                                FROM COVID-19</strong></h5>
+                        <div class="popup-close"
+                            on="tap:AMP.setState({&quot;lightboxOnLoad&quot;: {&quot;visible&quot;: true}}),mbr-popup-13-onload.hide"
+                            role="button" tabindex="0">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 32 32" fill="currentColor">
+                                <path
+                                    d="M31.797 0.191c-0.264-0.256-0.686-0.25-0.942 0.015l-13.328 13.326c-0.598 0.581 0.342 1.543 0.942 0.942l13.328-13.326c0.27-0.262 0.27-0.695 0-0.957zM14.472 17.515c-0.264-0.256-0.686-0.25-0.942 0.015l-13.328 13.326c-0.613 0.595 0.34 1.562 0.942 0.942l13.328-13.326c0.27-0.262 0.27-0.695 0-0.957zM1.144 0.205c-0.584-0.587-1.544 0.336-0.942 0.942l30.654 30.651c0.613 0.625 1.563-0.325 0.942-0.942z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="popup-body">
+
+
+                        <div>
+                            <div class="card-img">
+                                <amp-img src="assets/images/tankr-168-936x1407.jpeg" layout="responsive"
+                                    width="467.9887428842505" height="620.453" alt="Mobirise" class="mobirise-loader">
+                                    <div placeholder="" class="placeholder">
+                                        <div class="mobirise-spinner">
+                                            <em></em>
+                                            <em></em>
+                                            <em></em>
+                                        </div>
+                                    </div>
+
+                                </amp-img>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="popup-footer align-center">
+                        <div class="mbr-section-btn"><a class="btn btn-md btn-primary display-4" href="page9.html">
+                                LEARN MORE
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
 
 
 
 
+    <amp-state id="chatState">
+        <script
+            type="application/json">{"aplinkToChange": "http://api.whatsapp.com/send?phone=6018073839&text="}</script>
+    </amp-state>
+    <div id="chatbutton-wa"
+        style="left: auto; right: 15px; bottom: 15px; font-size: 14px; transition: bottom 0.2s; z-index: 999;">
+        <div role="button" tabindex="0" on="tap:popup.toggleVisibility" class="floating-wpp-button"
+            style="outline: none; display: block; width: 65px; height: 65px; border-radius: 50%; box-shadow: 1px 1px 4px rgba(60, 60, 60, 0.4); transition: box-shadow 0.2s; cursor: pointer; overflow: hidden;">
+            <div class="floating-wpp-button-image"></div>
+        </div>
+        <div id="popup" hidden="" class="floating-wpp-popup"
+            style="right: 0px; border-radius: 6px; background-color: #e4e4e4; position: absolute; overflow: hidden; padding: 0 12px 12px 12px; box-shadow: 1px 2px 8px rgba(60, 60, 60, 0.25); width: 280px; height: auto; bottom: 82px; opacity: 1; transition: bottom 0.1s ease-out, opacity 0.2s ease-out; transform-origin: bottom;">
+            <div class="floating-wpp-head"
+                style="background-color: #ff8a04; text-align: left; color: white; margin: 0 -15px 15px -15px; padding: 15px 15px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer;">
+                <span style="line-height: 1;">👋 Chat with us!</span><strong role="button" tabindex="0" class="close"
+                    style="outline: none; position: absolute; top: 14px; right: 8px; color: #ffffff; text-shadow: none; opacity: 1; font-size: inherit;"
+                    on="tap:popup.toggleVisibility">✖</strong>
+            </div>
+            <div class="floating-wpp-message"
+                style="background-color: #ffffff; padding: 8px; border-radius: 7.5px 7.5px 7.5px 7.5px; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15); opacity: 1; transition: opacity 0.2s; transition-delay: 0.2s; max-width: 100%;">
+                Hi!👋<br>
+                <br>
+                Got a question? Ask a team member now! 🔥<br>
+                <br>
+                Team Tankr
+            </div>
+            <div class="floating-wpp-input-message"
+                style="background-color: #e4e4e4; margin: 5px -15px -15px -15px; padding: 0 15px; display: flex; align-items: center;">
+                <textarea rows="1" placeholder="Type here"
+                    on="input-throttled:AMP.setState({chatState: {message: event.value}})"
+                    style="resize: none;border: 1px solid #ffffff; border-radius: 21px; box-shadow: none; padding: 8px 12px; margin: 10px 0 15px 0; width: 100%; max-width: 100%; font-family: inherit; font-size: inherit; resize: none; outline: none; color: #4a4a4a; box-shadow: 1px 2px 8px rgba(60, 60, 60, 0.25);"></textarea><a
+                    [href]="chatState.aplinkToChange.concat(chatState.message)"
+                    href="http://api.whatsapp.com/send?phone=6018073839&amp;text=" target="_blank"
+                    class="floating-wpp-btn-send"
+                    style="margin: 10px 0 15px 12px; font-size: 0; cursor: pointer; box-shadow: 1px 2px 8px rgba(60, 60, 60, 0.25); border-radius: 50%;"><svg
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 20 18" width="36" height="36">
+                        <circle cx="10" cy="9" r="10" fill="#ff8a04"></circle>
+                        <defs>
+                            <path id="a" d="M6.2 4.4H16v9.4H6.2z"></path>
+                        </defs>
+                        <clipPath id="b">
+                            <use xlink:href="#a" overflow="visible"></use>
+                        </clipPath>
+                        <g clip-path="url(#b)">
+                            <path d="M6.2 4.4v4.1L14 9l-7.8.7v4.1L16 9 6.2 4.4z" fill="#fff"></path>
+                        </g>
+                    </svg></a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
