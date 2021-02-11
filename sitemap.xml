@@ -1,6 +1,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>https://www.tankr.us/index.html</loc>
+		<loc>https://www.tankr.us/home.html</loc>
 	</url>
 	<url>
 		<loc>https://www.tankr.us/about.html</loc>
@@ -28,5 +28,8 @@
 	</url>
 	<url>
 		<loc>https://www.tankr.us/page9.html</loc>
+	</url>
+	<url>
+		<loc>https://www.tankr.us/apply.html</loc>
 	</url>
 </urlset>
