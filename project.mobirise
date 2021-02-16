@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Tankr Website",
-    "currentPage": "home.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "appamp",
       "title": "AppAMP",
@@ -78,7 +78,7 @@
     "publishChangesOnly": true
   },
   "pages": {
-    "home.html": {
+    "index.html": {
       "settings": {
         "main": true,
         "title": "Home",
